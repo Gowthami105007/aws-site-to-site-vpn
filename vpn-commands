@@ -1,0 +1,21 @@
+# Check private IP
+hostname -I
+
+# Check Internet connectivity
+ping -c 4 google.com
+
+# Search for IPsec software
+sudo dnf search strongswan
+sudo dnf search libreswan
+
+# Install Libreswan
+sudo dnf install libreswan -y
+
+# Check Libreswan version
+ipsec --version
+
+# Start IPsec
+sudo systemctl enable --now ipsec
+
+# Check IPsec service
+sudo systemctl status ipsec
